@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background: yellow;
+            font-family: verdana;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            display: grid;
+            place-items: center;
+            height: 600px;
+            width: 400px;
+            background: #fff;
+            box-shadow: 0 0 10px #333;
+            border-radius: 10px;
+        }
+
+        .main #output {
+            height: 200px;
+            width: 200px;
+            background: #ff3300;
+        }
+
+        .main #box {
+            height: 30px;
+            width: 300px;
+            background: #333;
+            color: #fff;
+            border: none;
+            outline: none;
+            border-radius: 50px;
+            text-align: center;
+        }
+
+        input[type="range"] {
+            appearance: none;
+            height: 15px;
+            width: 80%;
+            background: #333;
+            border-radius: 50px;
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb{
+            appearance: none;
+            height: 30px;
+            width: 30px;
+            background: tomato;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+    <span>Output: </span><div id="output"></div>
+    <span>Result: </span><input type="text" id="box" value="boder-radius: 0% 0% 0% 0%">
+    <input type="range" min="0" max="100" id="slider1">
+    <input type="range" min="0" max="100" id="slider2">
+    <input type="range" min="0" max="100" id="slider3">
+    <input type="range" min="0" max="100" id="slider4">
+</div>
+
+<script>
+    $(document).ready(function()
+    {
+        $('#slider1,#slider2,#slider3,#slider4').on('input',function(){
+            let slider1 =$('#slider1').val();
+            let slider2 =$('#slider2').val();
+            let slider3 =$('#slider3').val();
+            let slider4 =$('#slider4').val();
+            $('#output').css('border-top-right-radius',slider1 + '%');
+            $('#output').css('border-top-left-radius',slider2 + '%');
+            $('#output').css('border-bottom-right-radius',slider3 + '%');
+            $('#output').css('border-bottom-left-radius',slider4 + '%');
+            $('#box').val('border-radius : ' + slider1 + '%' + slider2+ '%' + slider3+ '%' + slider4+ '%')
+        })
+    }
+    )
+</script>
+</body>
+
+</html>
