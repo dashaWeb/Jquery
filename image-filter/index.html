@@ -125,6 +125,7 @@
                 let contrast = $('#contrast').val();
                 let saturate = $('#saturate').val();
                 $('#image').css('filter', 'grayscale('+grayscale + '%'+') sepia('+sepia + '%'+') blur('+blur + 'px'+') invert('+invert + '%'+') opacity('+opacity + '%'+') brightness('+brightness + '%'+') contrast('+contrast + '%'+') saturate('+saturate + '%'+')');
+                $('.output').text('filter:grayscale('+grayscale + '%'+') sepia('+sepia + '%'+') blur('+blur + 'px'+') invert('+invert + '%'+') opacity('+opacity + '%'+') brightness('+brightness + '%'+') contrast('+contrast + '%'+') saturate('+saturate + '%'+')');
             })
         })
     </script>

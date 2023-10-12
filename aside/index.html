@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aside menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style-type: none;
+            display: inline-block;
+            background-color: rgb(17, 17, 57);
+            color: #fff;
+            cursor: pointer;
+        }
+        ul li{
+            column-gap: 10px;
+            padding: 10px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+        ul li.active{
+            background-color: rgba(255, 255, 255,.3);
+        }
+        ul li i{
+            width: 30px;
+            text-align: center;
+        }
+        ul li span{
+            width: 100px;
+            display: none;
+        }
+        ul li:nth-child(1) i{
+            color: red;
+        }
+        ul li:nth-child(2) i{
+            color: lightgreen;
+        }
+        ul li:nth-child(3) i{
+            color: lightblue;
+        }
+        ul li:nth-child(4) i{
+            color: #fff;
+        }
+        ul li:nth-child(5) i{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><i class="fa-solid fa-heart"></i><span>Lorem.</span></li>
+        <li><i class="fa-solid fa-house"></i><span>Voluptate.</span></li>
+        <li><i class="fa-solid fa-cloud"></i><span>Quod!</span></li>
+        <li><i class="fa-solid fa-bell"></i><span>Inventore.</span></li>
+        <li><i class="fa-solid fa-cart-shopping"></i><span>Labore.</span></li>
+    </ul>
+    <div>
+        <label for="">Apple</label>
+        <input type="checkbox">
+        <label for="">Plum</label>
+        <input type="checkbox">
+        <button>Click</button>
+    </div>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+        $('ul').hover(function(){
+            $(this).find('span').show(200);
+        },function(){
+            $(this).find('span').hide(200);
+        })
+        $('li').hover(function(){
+            $(this).addClass('active');
+        },function(){
+            $(this).removeClass('active');
+        })
+        $('button').click(function(){
+            let res = $('div :checked').prev().text();
+            console.log(res);
+        })
+    </script>
+</body>
+</html>
