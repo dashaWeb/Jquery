@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+        let url = `https://openlibrary.org/subjects/mystery_and_detective_stories.json`
+        $.ajax({
+            url:url,
+            dataType:'json'
+        }).done(function(data){
+            console.log(data)
+        }).fail(function(){
+            console.error("Error");
+        })
+    </script>
+</body>
+</html>
